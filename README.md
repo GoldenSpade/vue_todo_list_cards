@@ -1,24 +1,19 @@
-# vue_todo_list_cards
+# [Vue.js ToDo List Cards](https://billizane.github.io/vue_todo_list_cards/) #
 
-## Project setup
-```
-npm install
-```
+### Description ###
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+This application is a sheet of cards.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+* The app is built from scratch.
+* Its original design was used.
+* It is possible to assign priority to tasks.
+* It is possible to sort by number and by priority.
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Technology Stack: ###
+* HTML
+* CSS;
+* SASS;
+* JavaScript;
+* Vue.JS 3.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### [DEMO](https://billizane.github.io/vue_todo_list_cards/) ###
