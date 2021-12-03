@@ -1,0 +1,92 @@
+.header {
+  &__title {
+    font-family: 'MyriadProBold600', sans-serif;
+    text-align: center;
+    color: $mainTitleColor;
+    font-size: 60px;
+
+    padding: 40px 0;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 530px) {
+      flex-wrap: wrap;
+    }
+
+    &-radios {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-family: 'MyriadProRegular400', sans-serif;
+      font-size: 22px;
+      color: $mainText;
+      line-height: 15px;
+
+      margin-right: 10px;
+
+      position: relative;
+
+      &-caption {
+        font-size: 16px;
+        position: absolute;
+        top: -20px;
+
+        opacity: 0.5;
+
+        @media (max-width: 530px) {
+          top: 0;
+        }
+      }
+
+      @media (max-width: 530px) {
+        padding-top: 24px;
+      }
+    }
+
+    &-radio {
+      padding-right: 5px;
+
+      @media (max-width: 530px) {
+        padding-right: 20px;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__form-item {
+    min-height: 35px;
+    max-height: 38px;
+
+    background-color: $mainText;
+    border-radius: 3px;
+    padding-left: 7px;
+
+    font-size: 18px;
+    color: $mainBg;
+
+    width: 100%;
+    margin-right: 10px;
+
+    padding-top: 2px;
+
+    @media (max-width: 530px) {
+      margin-bottom: 10px;
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &::placeholder {
+      color: $mainBg;
+    }
+  }
+}

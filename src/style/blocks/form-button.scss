@@ -1,0 +1,23 @@
+.form-button {
+  max-height: 38px;
+  padding: 0 18px;
+  border-radius: 3px;
+  background-color: $alertColor;
+
+  color: $mainText;
+  font-family: 'MyriadProBold600', sans-serif;
+  font-size: 22px;
+
+  transition: background-color $trDuration;
+
+  &:hover {
+    background-color: $mainTitleColor;
+    cursor: pointer;
+  }
+
+  @media (max-width: 530px) {
+    width: 50%;
+    max-height: 50px;
+    margin-top: 20px;
+  }
+}

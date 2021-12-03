@@ -1,0 +1,45 @@
+.main-content {
+  padding-bottom: 40px;
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+
+    border-top: dashed $mainText;
+    border-bottom: dashed $mainText;
+
+    &--border-top {
+      border-top: none;
+    }
+  }
+
+  &__col {
+    flex: 0 1 50%;
+    flex-wrap: wrap;
+
+    border-right: dashed $mainText;
+
+    padding-right: 20px;
+
+    &:last-child {
+      padding-right: 0;
+      padding-left: 20px;
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__title {
+    font-family: 'MyriadProBold600', sans-serif;
+    color: $mainText;
+    font-size: 40px;
+    text-align: center;
+
+    padding: 20px 0;
+    width: 100%;
+
+    border-bottom: dashed $mainText;
+  }
+}

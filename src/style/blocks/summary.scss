@@ -1,0 +1,32 @@
+.summary {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  font-family: 'MyriadProBold600', sans-serif;
+
+  padding: 20px 0;
+
+  font-size: 40px;
+
+  @media (min-width: 350px) and (max-width: 570px) {
+    font-size: calc(22px + (22 - 18) * ((100vw - 350px) / (570 - 350)))
+  }
+
+  &__new-todos-title {
+    color: $newCardsColor;
+  }
+
+  &__new-todos-count {
+    color: $alertColor;
+    text-align: right;
+  }
+
+  &__done-todos-title {
+    color: $doneCardsBgColor
+  }
+
+  &__done-todos-count {
+    color: $doneCardsButtonColor
+  }
+}

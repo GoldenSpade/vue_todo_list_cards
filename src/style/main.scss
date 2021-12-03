@@ -1,0 +1,25 @@
+@import './reset';
+
+@import './vars';
+@import './mixins';
+@import './fonts';
+
+@import './blocks/container';
+
+@import './blocks/header';
+@import './blocks/form-button';
+@import './blocks/sort';
+@import './blocks/sort';
+@import './blocks/main-content';
+@import './blocks/new-card';
+@import './blocks/done-card';
+@import './blocks/summary';
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: $mainBg;
+}

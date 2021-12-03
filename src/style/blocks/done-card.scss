@@ -1,0 +1,112 @@
+.done-card {
+  background-color: $doneCardsBgColor;
+  margin: 20px 0;
+
+  padding: 0 10px;
+
+  position: relative;
+  opacity: 0.75;
+
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+
+  &__square {
+    width: 43px;
+    height: 43px;
+    background-color: $doneCardsButtonColor;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: 'MyriadProBold600', sans-serif;
+    font-size: 24px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__id {
+    color: $mainText;
+
+    & span {
+      display: block;
+    }
+  }
+
+  &__priority {
+    color: $mainText;
+
+    top: 0;
+    left: 45px;
+  }
+
+  &__title {
+    text-align: center;
+
+    font-family: 'MyriadProBold600', sans-serif;
+    color: $mainText;
+    font-size: 24px;
+    border-bottom: solid 1px $mainText;
+    text-decoration: line-through;
+
+    padding: 55px 0 15px;
+  }
+
+  &__subtitle {
+    font-family: 'MyriadProRegular400', sans-serif;
+    font-size: 20px;
+    color: $mainText;
+
+    text-decoration: line-through;
+
+    padding-top: 15px;
+    padding-bottom: 45px;
+
+    @media (max-width: 450px) {
+      font-size: 18px;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    bottom: 6px;
+    right: 0;
+
+    & span {
+      background-color: $doneCardsButtonColor;
+
+      padding: 5px 14px;
+
+      font-family: 'MyriadProRegular400', sans-serif;
+      color: $mainText;
+      font-size: 18px;
+      text-transform: uppercase;
+
+      transition: background-color $trDuration;
+
+      @media (max-width: 410px) {
+        padding: 5px 6px;
+      }
+
+      &:hover {
+        background-color: $doneCardsButtonHover;
+      }
+    }
+
+    &--repeat {
+      right: 86px;
+
+      @media (max-width: 410px) {
+        right: 72px;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

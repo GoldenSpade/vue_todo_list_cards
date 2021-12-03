@@ -1,0 +1,38 @@
+.sort {
+  padding-bottom: 40px;
+  &__wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__items {
+    margin-right: 40px;
+    padding-right: 10px;
+    color: $mainText;
+
+    font-family: "MyriadProBold600", sans-serif;
+    font-size: 18px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @media (max-width: 420px) {
+      margin-right: 0;
+    }
+
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      background-color: $mainBg;
+    }
+  }
+
+  &__item {
+    font-family: "MyriadProRegular400", sans-serif;
+    color: $mainBg;
+    font-size: 16px;
+    background-color: $mainText;
+  }
+}
