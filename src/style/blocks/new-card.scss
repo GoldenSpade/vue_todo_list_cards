@@ -24,6 +24,7 @@
 
     font-family: 'MyriadProBold600', sans-serif;
     font-size: 24px;
+    line-height: 5px;
 
     position: absolute;
     top: 0;
@@ -78,7 +79,7 @@
     & span {
       background-color: $mainTitleColor;
 
-      padding: 7px 14px 5px 14px;
+      padding: 8px 14px 5px 14px;
 
       font-family: 'MyriadProRegular400', sans-serif;
       color: $mainText;
