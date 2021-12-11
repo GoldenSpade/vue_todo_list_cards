@@ -193,16 +193,34 @@
 </template>
 
 <script>
-import { ref, reactive, computed } from "vue";
+import { ref, reactive, computed, onMounted } from "vue";
 
 export default {
   name: "App",
 
   setup() {
-    let itemId = ref(0);
-    let todoTitle = ref("");
-    let todoSubtitle = ref("");
-    let todoPriority = ref("");
+    onMounted(() => {
+      if (!localStorage.getItem("newTodosLocal")) {
+        return;
+      } else {
+        JSON.parse(localStorage.getItem("newTodosLocal")).map((x) =>
+          newTodos.push(x)
+        );
+      }
+
+      if (!localStorage.getItem("oldTodosLocal")) {
+        return;
+      } else {
+        JSON.parse(localStorage.getItem("oldTodosLocal")).map((x) =>
+          oldTodos.push(x)
+        );
+      }
+    });
+
+    const itemId = ref(0);
+    const todoTitle = ref("");
+    const todoSubtitle = ref("");
+    const todoPriority = ref("");
     const sortBy = ref("Sort by number");
 
     const newTodos = reactive([]);
@@ -216,21 +234,33 @@ export default {
         subtitle: todoSubtitle.value,
         priority: todoPriority.value,
       });
+
       todoTitle.value = "";
       todoSubtitle.value = "";
       todoPriority.value = "";
+
+      localStorage.setItem("newTodosLocal", JSON.stringify(newTodos));
     };
+
     const todoDone = (id) => {
       oldTodos.unshift(newTodos[id]);
       newTodos.splice(id, 1);
-      console.log(id);
+
+      localStorage.setItem("newTodosLocal", JSON.stringify(newTodos));
+      localStorage.setItem("oldTodosLocal", JSON.stringify(oldTodos));
     };
     const repeatTodo = (id) => {
       newTodos.unshift(oldTodos[id]);
       oldTodos.splice(id, 1);
+
+      localStorage.setItem("newTodosLocal", JSON.stringify(newTodos));
+      localStorage.setItem("oldTodosLocal", JSON.stringify(oldTodos));
     };
     const deleteTodo = (id) => {
       oldTodos.splice(id, 1);
+
+      localStorage.setItem("newTodosLocal", JSON.stringify(newTodos));
+      localStorage.setItem("oldTodosLocal", JSON.stringify(oldTodos));
     };
 
     const sortedTodos = computed(() => {
@@ -258,6 +288,7 @@ export default {
       }
       return newTodos;
     });
+
     return {
       itemId,
       todoTitle,
