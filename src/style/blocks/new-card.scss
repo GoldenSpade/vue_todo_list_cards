@@ -6,6 +6,8 @@
 
   position: relative;
 
+  overflow: hidden;
+
   &__top {
     display: flex;
     align-items: center;
@@ -70,7 +72,7 @@
 
   &__button {
     position: absolute;
-    bottom: 6px;
+    bottom: 5px;
     right: 0;
 
     & span {

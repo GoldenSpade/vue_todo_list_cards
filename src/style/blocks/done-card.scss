@@ -5,6 +5,9 @@
   padding: 0 10px;
 
   position: relative;
+
+  overflow: hidden;
+
   opacity: 0.75;
 
   &__top {
@@ -73,7 +76,7 @@
 
   &__button {
     position: absolute;
-    bottom: 6px;
+    bottom: 5px;
     right: 0;
 
     & span {
