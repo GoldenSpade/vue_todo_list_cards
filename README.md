@@ -1,21 +1,24 @@
-# [Vue.js 3 | ToDo List Cards](https://billizane.github.io/vue_todo_list_cards/) #
+# 34325266
 
-### Description ###
+## Project setup
+```
+npm install
+```
 
-This application is a sheet of cards.
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-* The app is built from scratch.
-* Its original design was used.
-* It is possible to assign priority to tasks.
-* It is possible to sort by number and by priority.
+### Compiles and minifies for production
+```
+npm run build
+```
 
-### The ability to store data in localStorage was implemented. Now all todos will be saved locally in your browser and loaded after restarting the browser. ###
+### Lints and fixes files
+```
+npm run lint
+```
 
-### Technology Stack: ###
-* HTML
-* CSS;
-* SASS;
-* JavaScript;
-* Vue.JS 3.
-
-### [DEMO](https://billizane.github.io/vue_todo_list_cards/) ###
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).

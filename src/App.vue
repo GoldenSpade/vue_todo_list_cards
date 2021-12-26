@@ -4,7 +4,7 @@
       <div class="header__title">TodoList</div>
       <form action="#" class="header__form" @submit.prevent="addTodo">
         <input
-          class="header__form-item"
+          class="header__form-item "
           type="text"
           placeholder="Todo title"
           required
@@ -14,7 +14,7 @@
           class="header__form-item"
           type="text"
           placeholder="Todo subtitle"
-          required
+          requiredz
           v-model="todoSubtitle"
         />
 
