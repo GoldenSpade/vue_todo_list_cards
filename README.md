@@ -18,4 +18,4 @@ This application is a sheet of cards.
 * JavaScript;
 * Vue.JS 3.
 
-### [DEMO](https://billizane.github.io/vue_todo_list_cards/) ###
+### [DEMO](https://GoldenSpade.github.io/vue_todo_list_cards/) ###
