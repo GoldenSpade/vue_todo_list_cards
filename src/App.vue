@@ -4,7 +4,7 @@
       <div class="header__title">TodoList</div>
       <form action="#" class="header__form" @submit.prevent="addTodo">
         <input
-          class="header__form-item "
+          class="header__form-item"
           type="text"
           placeholder="Todo title"
           required
@@ -123,7 +123,11 @@
         <div class="main-content__row">
           <div class="main-content__col">
             <div class="main-content__title">New Todos</div>
-            <div class="new-card" v-for="(item, i) in sortedTodos" :key="item.id">
+            <div
+              class="new-card"
+              v-for="(item, i) in sortedTodos"
+              :key="item.id"
+            >
               <div class="new-card__top">
                 <div class="new-card__square new-card__id">
                   <span>{{ item.id + 1 }}</span>
@@ -194,6 +198,8 @@
 
 <script>
 import { ref, reactive, computed, onMounted } from 'vue'
+// mock data import
+import { mockNewTodos, mockOldTodos } from '@/mocks/todos'
 
 export default {
   name: 'App',
@@ -201,6 +207,9 @@ export default {
   setup () {
     onMounted(() => {
       loadTodosFromLS()
+      // add mock data if cards are empty
+      checkCardsLength()
+      document.title = 'Vue.JS TodoList Crads'
     })
 
     const itemId = ref(0)
@@ -216,7 +225,7 @@ export default {
       if (!localStorage.getItem('newTodosLocal')) {
         JSON.stringify(localStorage.setItem('newTodosLocal', []))
       } else {
-        JSON.parse(localStorage.getItem('newTodosLocal')).map((x) => {
+        JSON.parse(localStorage.getItem('newTodosLocal')).forEach(x => {
           newTodos.unshift(x)
         })
       }
@@ -224,9 +233,21 @@ export default {
       if (!localStorage.getItem('oldTodosLocal')) {
         JSON.stringify(localStorage.setItem('oldTodosLocal', []))
       } else {
-        JSON.parse(localStorage.getItem('oldTodosLocal')).map((x) => {
+        JSON.parse(localStorage.getItem('oldTodosLocal')).forEach(x => {
           oldTodos.unshift(x)
         })
+      }
+    }
+
+    const checkCardsLength = () => {
+      // add mock data if newTodos are empty
+      if (newTodos.length === 0) {
+        mockNewTodos.forEach(x => newTodos.unshift(x))
+      }
+
+      // add mock data if oldTodos are empty
+      if (oldTodos.length === 0) {
+        mockOldTodos.forEach(x => oldTodos.unshift(x))
       }
     }
 
@@ -245,7 +266,7 @@ export default {
       localStorage.setItem('newTodosLocal', JSON.stringify(newTodos))
     }
 
-    const todoDone = (id) => {
+    const todoDone = id => {
       oldTodos.unshift(newTodos[id])
       newTodos.splice(id, 1)
 
@@ -253,7 +274,7 @@ export default {
       localStorage.setItem('oldTodosLocal', JSON.stringify(oldTodos))
     }
 
-    const repeatTodo = (id) => {
+    const repeatTodo = id => {
       newTodos.unshift(oldTodos[id])
       oldTodos.splice(id, 1)
 
@@ -261,7 +282,7 @@ export default {
       localStorage.setItem('oldTodosLocal', JSON.stringify(oldTodos))
     }
 
-    const deleteTodo = (id) => {
+    const deleteTodo = id => {
       oldTodos.splice(id, 1)
 
       localStorage.setItem('newTodosLocal', JSON.stringify(newTodos))
@@ -299,6 +320,7 @@ export default {
       newTodos,
       oldTodos,
       loadTodosFromLS,
+      checkCardsLength,
       addTodo,
       todoDone,
       repeatTodo,
@@ -309,5 +331,4 @@ export default {
 }
 </script>
 
-<style>
-</style>
+<style></style>
