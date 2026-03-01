@@ -1,4 +1,4 @@
-# [Vue.js 3 | ToDo List Cards](https://billizane.github.io/vue_todo_list_cards/) #
+# [Vue.js 3 | ToDo List Cards](https://goldenspade.github.io/vue_todo_list_cards/) #
 
 ### Description ###
 
@@ -18,4 +18,4 @@ This application is a sheet of cards.
 * JavaScript;
 * Vue.JS 3.
 
-### [DEMO](https://GoldenSpade.github.io/vue_todo_list_cards/) ###
+### [DEMO](https://goldenspade.github.io/vue_todo_list_cards/) ###
